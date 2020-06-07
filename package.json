@@ -23,5 +23,11 @@
     "request": "^2.88.0",
     "yargs": "^15.3.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "eslint": "^7.2.0",
+    "eslint-config-strongloop": "^2.1.0"
+  },
+  "scripts": {
+    "pretest": "eslint --ignore-path .gitignore ."
+  }
 }
