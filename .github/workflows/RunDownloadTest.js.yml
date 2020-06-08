@@ -5,7 +5,7 @@ on: [push]
 #         branches:
 #         - '!master'
 jobs:
-  Lint:
+  Run Download Test:
     runs-on: ubuntu-latest
 
     strategy:
