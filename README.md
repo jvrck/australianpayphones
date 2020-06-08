@@ -9,7 +9,7 @@ $ aus-payphones
 
 ### Program usage
 
-By default, `aus-payphones` will fetch data and place it into the working directory. The files contains the current timestamp. There are options available to generate a file that contains a date rather than a timestamp and also emit the file to another path. 
+By default, `aus-payphones` will fetch data and place it into the working directory. The file contains the current timestamp. The program offers options to generate a file that contains a date rather than a timestamp and also emit the file to a selected path. 
 
 The following is from the program usage output:
 
