@@ -53,7 +53,7 @@ if (!fs.existsSync(path)){
 payphones.getPayphones()
   .then(results => {
     fs.writeFileSync(`${path}${filename}`, JSON.stringify(results));
-    console.log(`File written to ${path}${filename}`);
+    console.log(`File written to ${path}${filename}`)
   })
   .catch(e => {
     console.error('Cannot get payphone data:', e);
