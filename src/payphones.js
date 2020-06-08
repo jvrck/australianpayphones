@@ -56,9 +56,10 @@ function getPayphones() {
 
               counter++;
 
-              // Used to test only 2 itterations
-              // if(counter > 2 ){
-              //     process = false;
+              // // Used to test only 2 itterations
+              // if (counter > 2){
+              //   reject('This is a mess');
+              //   process = false;
               // }
 
               // check if process needs to continue

@@ -56,5 +56,5 @@ payphones.getPayphones()
     console.log(`File written to ${path}${filename}`);
   })
   .catch(e => {
-
+    console.error('Cannot get payphone data:', e);
   });
