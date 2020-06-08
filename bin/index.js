@@ -25,6 +25,13 @@ const argv = require('yargs')
     demandOption: false,
     default: process.cwd(),
   })
+  .option('t', {
+    alias: 'test',
+    describe: 'Sets the mode to test to only download a subset of the date',
+    type: 'boolean',
+    demandOption: false,
+    default: false,
+  })
   .help('h')
   .alias('h', 'help').argv;
 
@@ -41,7 +48,7 @@ if (argv.p.substr(-1) !== '/') {
   argv.path = argv.p;
 }
 
-const { filename, path } = argv;
+const { filename, path, test } = argv;
 
 // check if path exists
 // create path if it does not exist
@@ -50,10 +57,10 @@ if (!fs.existsSync(path)){
   fs.mkdirSync(path);
 }
 
-payphones.getPayphones()
+payphones.getPayphones(test)
   .then(results => {
     fs.writeFileSync(`${path}${filename}`, JSON.stringify(results));
-    console.log(`File written to ${path}${filename}`)
+    console.log(`File written to ${path}${filename}`);
   })
   .catch(e => {
     console.error('Cannot get payphone data:', e);
