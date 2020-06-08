@@ -1,9 +1,9 @@
 name: Run Download Test
-on: [push]
-# on:
-#     push:
-#         branches:
-#         - '!master'
+on:
+  push:
+    branches:
+      - '*'
+      - '!master'
 jobs:
   Run-Download-Test:
     runs-on: ubuntu-latest
