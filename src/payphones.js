@@ -3,7 +3,7 @@ const request = require('request');
 const async = require('async');
 const geojsonMerge = require('@mapbox/geojson-merge');
 
-function getPayphones() {
+function getPayphones(test) {
   return new Promise(function(resolve, reject){
     try {
       /**
@@ -56,11 +56,11 @@ function getPayphones() {
 
               counter++;
 
-              // // Used to test only 2 itterations
-              // if (counter > 2){
-              //   reject('This is a mess');
-              //   process = false;
-              // }
+              // Used to test only 1 itteration
+              if (counter === 2 && test){
+                // reject('some failure')
+                process = false;
+              }
 
               // check if process needs to continue
               if (data.features.length === 0 || data.features.length < 1000){
