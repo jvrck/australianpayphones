@@ -1,0 +1,52 @@
+name: Build Develop Branch
+on:
+  push:
+    branches:
+      - 'develop'
+jobs:
+  Lint:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm install 
+      - run: npm run pretest
+
+  Test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm install 
+      - run: node . -t
+    
+  Merge-To-Master:
+    needs:
+      - Lint
+      - Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Extract branch name
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: extract_branch
+      - uses: actions/checkout@v2
+      - run: git checkout master
+      - run: git merge ${{ steps.extract_branch.outputs.branch }}
+  

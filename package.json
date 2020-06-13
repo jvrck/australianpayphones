@@ -1,6 +1,6 @@
 {
   "name": "aus-payphones",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Get Telstra payphone data",
   "main": "bin/index.js",
   "author": "jvrck",
@@ -11,7 +11,7 @@
     "url": "https://github.com/jvrck/australianpayphones.git"
   },
   "engines": {
-    "node": ">=10"
+    "node": ">=12"
   },
   "bin": {
     "aus-payphones": "./bin/index.js"
