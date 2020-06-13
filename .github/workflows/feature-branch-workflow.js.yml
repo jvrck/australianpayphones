@@ -1,4 +1,4 @@
-name: Lint and Test
+name: Build Feature Branch
 on:
   push:
     branches:
