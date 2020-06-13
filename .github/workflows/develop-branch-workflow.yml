@@ -42,11 +42,12 @@ jobs:
       - Test
     runs-on: ubuntu-latest
     steps:
-      - name: Extract branch name
-        shell: bash
-        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-        id: extract_branch
-      - uses: actions/checkout@v2
-      - run: git checkout master
-      - run: git merge ${{ steps.extract_branch.outputs.branch }}
+      - uses: actions/checkout@master
+      - name: Merge to master branch
+        uses: devmasx/merge-branch@v1.1.0
+        with:
+          type: now
+          target_branch: 'master'
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
   
