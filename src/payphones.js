@@ -58,7 +58,7 @@ function getPayphones(test) {
 
               // Used to test only 1 itteration
               if (counter === 2 && test){
-                reject('some failure')
+                // reject('some failure')
                 process = false;
               }
 
