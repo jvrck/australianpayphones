@@ -1,11 +1,11 @@
-name: Run Download Test
+name: Lint and Test
 on:
   push:
     branches:
       - '*'
       - '!master'
 jobs:
-  Run-Download-Test:
+  Lint:
     runs-on: ubuntu-latest
 
     strategy:
@@ -19,4 +19,5 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install 
+    - run: npm run pretest
     - run: node . -t
