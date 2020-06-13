@@ -5,7 +5,7 @@ on:
       - '*'
       - '!master'
 jobs:
-  Lint:
+  Lint and Test:
     runs-on: ubuntu-latest
 
     strategy:
