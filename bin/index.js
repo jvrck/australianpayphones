@@ -3,7 +3,7 @@
 const fs = require('fs');
 const payphones = require('../src/payphones');
 const argv = require('yargs')
-  .usage('Usage: $0 <command> [options]')
+  .usage('Usage: $0 aus-payphones [options]')
   .option('f', {
     alias: 'filename',
     describe: 'The name of the file to emit the features to. The default file takes for form payphones-{timestamp}.json',
