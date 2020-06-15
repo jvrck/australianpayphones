@@ -32,6 +32,13 @@ const argv = require('yargs')
     demandOption: false,
     default: false,
   })
+  .option('e', {
+    alias: 'envelope',
+    describe: 'Sets the mode to test to only download a subset of the data',
+    type: 'string',
+    demandOption: false,
+    default: false,
+  })
   .help('h')
   .alias('h', 'help').argv;
 
@@ -48,7 +55,7 @@ if (argv.p.substr(-1) !== '/') {
   argv.path = argv.p;
 }
 
-const { filename, path, test } = argv;
+const { filename, path, test, envelope } = argv;
 
 // check if path exists
 // create path if it does not exist
@@ -57,7 +64,7 @@ if (!fs.existsSync(path)){
   fs.mkdirSync(path);
 }
 
-payphones.getPayphones(test)
+payphones.getPayphones(test, envelope)
   .then(results => {
     fs.writeFileSync(`${path}${filename}`, JSON.stringify(results));
     console.log(`File written to ${path}${filename}`);
