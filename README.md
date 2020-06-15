@@ -26,7 +26,7 @@ Options:
                                                       [boolean] [default: false]
   -p, --path      Path to generate the file. Defaults to current directory
       [string] [default: "/Users/jim.vrckovski/jv/gitrepos/australianpayphones"]
-  -t, --test      Sets the mode to test to only download a subset of the date
+  -t, --test      Sets the mode to test to only download a subset of the data
                                                       [boolean] [default: false]
   -h, --help      Show help                                            [boolean]
 ```
