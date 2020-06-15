@@ -30,3 +30,7 @@ Options:
                                                       [boolean] [default: false]
   -h, --help      Show help                                            [boolean]
 ```
+
+### Sample data
+
+A sample of the data can be found [here](https://github.com/jvrck/australianpayphones/blob/develop/sample-file/2020-06-15.json)
