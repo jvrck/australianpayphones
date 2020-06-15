@@ -7,19 +7,19 @@ function getPayphones(test, envelope) {
   return new Promise(function(resolve, reject){
     try {
       /**
-             * Processing variables
-             * process: whilst true, continues to loop to download data
-             * counter: the request page number and counter used for download requests
-             */
+       * Processing variables
+       * process: whilst true, continues to loop to download data
+       * counter: the request page number and counter used for download requests
+       */
       let process = true;
       let counter = 1;
 
       /**
-             * GeoJson variable used to construct the final merged geojson file
-             * features: the concatenated feature collection
-             * crs: crs information from the service contains epsg projection information
-             * metadata: the service returns metadata service in each request that is identical.
-             */
+       * GeoJson variable used to construct the final merged geojson file
+       * features: the concatenated feature collection
+       * crs: crs information from the service contains epsg projection information
+       * metadata: the service returns metadata service in each request that is identical.
+       */
       let features = [];
       let crs = null;
       let metadata = null;
