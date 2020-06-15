@@ -30,6 +30,8 @@ Options:
       [string] [default: "/Users/jim.vrckovski/jv/gitrepos/australianpayphones"]
   -t, --test      Sets the mode to test to only download a subset of the data
                                                       [boolean] [default: false]
+  -e, --envelope  Sets the envelope for data retrieval
+                  [string] [default: "112.91944420700005,-54.75042083099999,159.10645592500006,-9.240166924999869"]
   -h, --help      Show help                                            [boolean]
 ```
 
