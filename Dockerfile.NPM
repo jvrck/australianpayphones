@@ -1,5 +1,7 @@
+# used to test getting the package with npm works
+
 FROM node:12.18.0-buster-slim
 
 RUN npm install -g aus-payphones
 
-RUN aus-payphones
+RUN aus-payphones -t
