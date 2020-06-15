@@ -1,0 +1,18 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "args":["-t","-f", "sydcan.json", "-e", "148.6952380729313,-35.48618721758026,151.7823962760555,-33.62241419992524"],
+            "program": "${workspaceFolder}\\bin\\index.js"
+        }
+    ]
+}

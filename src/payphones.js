@@ -3,7 +3,7 @@ const request = require('request');
 const async = require('async');
 const geojsonMerge = require('@mapbox/geojson-merge');
 
-function getPayphones(test) {
+function getPayphones(test, envelope) {
   return new Promise(function(resolve, reject){
     try {
       /**
@@ -24,13 +24,21 @@ function getPayphones(test) {
       let crs = null;
       let metadata = null;
 
+      let envelopeString = '112.91944420700005,-54.75042083099999,159.10645592500006,-9.240166924999869';
+
+      console.log(test);
+      // console.log(envelope);
+      if (envelope) {
+        envelopeString = envelope;
+      }
+
       // this is used for timing the execution.
       console.time('Download complete');
 
       async.whilst(
         function() { return process; },
         function(callback) {
-          request(getUrl(counter), function(err, resposne, body) {
+          request(getUrl(counter, envelopeString), function(err, response, body) {
             if (err) {
               console.log(err);
               return null;
@@ -96,8 +104,8 @@ function getPayphones(test) {
   });
 }
 
-function getUrl(pageNumber){
-  return `https://ppol.pbspectrum.com.au/connect/analyst/controller/connectProxy/rest/Spatial/FeatureService?url=tables/features.json?q=SELECT%20*%20FROM%20%22/Telstra%20PPOL%20Data/Payphones/TLS_All_Payphones%22%20WHERE%20MI_Intersects(obj,MI_Box(112.91944420700005,-54.75042083099999,159.10645592500006,-9.240166924999869,%27EPSG:4283%27))%26page=${pageNumber}%26pageLength=1000`;
+function getUrl(pageNumber, envelopeString){
+  return `https://ppol.pbspectrum.com.au/connect/analyst/controller/connectProxy/rest/Spatial/FeatureService?url=tables/features.json?q=SELECT%20*%20FROM%20%22/Telstra%20PPOL%20Data/Payphones/TLS_All_Payphones%22%20WHERE%20MI_Intersects(obj,MI_Box(${envelopeString},%27EPSG:4283%27))%26page=${pageNumber}%26pageLength=1000`;
 }
 
 module.exports = {
