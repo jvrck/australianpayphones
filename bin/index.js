@@ -27,7 +27,7 @@ const argv = require('yargs')
   })
   .option('t', {
     alias: 'test',
-    describe: 'Sets the mode to test to only download a subset of the date',
+    describe: 'Sets the mode to test to only download a subset of the data',
     type: 'boolean',
     demandOption: false,
     default: false,
