@@ -1,5 +1,7 @@
 # Australian Payphones
 
+![Build](https://github.com/jvrck/australianpayphones/workflows/Build%20Develop%20Branch/badge.svg)
+
 Gets Australian payphone data from Telstra in GeoJSON format.
 
 ```shell
