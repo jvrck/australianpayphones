@@ -38,3 +38,7 @@ Options:
 ### Sample data
 
 A sample of the data can be found [here](https://github.com/jvrck/australianpayphones/blob/develop/sample-file/2020-06-15.json)
+
+### [Development Information](./documentation/README.md)
+
+![MAP](./documentation/images/payphone-map.png) 
