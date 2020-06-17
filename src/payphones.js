@@ -26,7 +26,6 @@ function getPayphones(test, envelope) {
 
       let envelopeString = '112.91944420700005,-54.75042083099999,159.10645592500006,-9.240166924999869';
 
-      console.log(test);
       // console.log(envelope);
       if (envelope) {
         envelopeString = envelope;
