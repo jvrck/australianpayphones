@@ -22,9 +22,9 @@ Usage:  aus-payphones [options]
 Options:
   --version       Show version number                                  [boolean]
   -f, --filename  The name of the file to emit the features to. The default file
-                  takes for form payphones-{timestamp}.json
-                              [string] [default: "payphones-1592185512735.json"]
-  -d, --datefile  Generate file with date - payphones-{yyyy}-{mm}-{dd}.json
+                  takes for form payphones-{timestamp}.geojson
+                              [string] [default: "payphones-1592185512735.geojson"]
+  -d, --datefile  Generate file with date - payphones-{yyyy}-{mm}-{dd}.geojson
                                                       [boolean] [default: false]
   -p, --path      Path to generate the file. Defaults to current directory
       [string] [default: "/Users/jim.vrckovski/jv/gitrepos/australianpayphones"]
@@ -37,7 +37,7 @@ Options:
 
 ### Sample data
 
-A sample of the data can be found [here](https://github.com/jvrck/australianpayphones/blob/develop/sample-file/2020-06-15.json)
+A sample of the data can be found [here](https://github.com/jvrck/australianpayphones/blob/develop/sample-file/2020-06-15.geojson)
 
 ### [Development Information](./documentation/README.md)
 
