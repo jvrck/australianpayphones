@@ -37,7 +37,7 @@ Options:
 
 ### Sample data
 
-A sample of the data can be found [here](https://github.com/jvrck/australianpayphones/blob/develop/sample-file/2020-06-15.geogeojson)
+A sample of the data can be found [here](https://github.com/jvrck/australianpayphones/blob/develop/sample-file/2020-06-15.geojson)
 
 ### [Development Information](./documentation/README.md)
 
