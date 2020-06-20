@@ -6,14 +6,14 @@ const argv = require('yargs')
   .usage('Usage: $0 aus-payphones [options]')
   .option('f', {
     alias: 'filename',
-    describe: 'The name of the file to emit the features to. The default file takes for form payphones-{timestamp}.json',
+    describe: 'The name of the file to emit the features to. The default file takes for form payphones-{timestamp}.geojson',
     type: 'string',
     demandOption: false,
-    default: `payphones-${Date.now()}.json`,
+    default: `payphones-${Date.now()}.geojson`,
   })
   .option('d', {
     alias: 'datefile',
-    describe: 'Generate file with date - payphones-{yyyy}-{mm}-{dd}.json',
+    describe: 'Generate file with date - payphones-{yyyy}-{mm}-{dd}.geojson',
     type: 'boolean',
     demandOption: false,
     default: false,
@@ -45,7 +45,7 @@ const argv = require('yargs')
 if (argv.d){
   // change filename to use date rather than timestamp
   let now = new Date();
-  argv.f = `${now.getFullYear()}-${('0' + (now.getMonth() + 1)).slice(-2)}-${('0' + now.getDate()).slice(-2)}.json`;
+  argv.f = `${now.getFullYear()}-${('0' + (now.getMonth() + 1)).slice(-2)}-${('0' + now.getDate()).slice(-2)}.geojson`;
   argv.filename = argv.f;
 }
 
