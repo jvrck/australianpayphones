@@ -1,39 +1,39 @@
-name: Build Feature Branch
-on:
-  push:
-    branches:
-      - '*'
-      - '!master'
-      - '!develop'
-jobs:
-  Lint:
-    runs-on: ubuntu-latest
+# name: Build Feature Branch
+# on:
+#   push:
+#     branches:
+#       - '*'
+#       - '!master'
+#       - '!develop'
+# jobs:
+#   Lint:
+#     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [12.x]
+#     strategy:
+#       matrix:
+#         node-version: [12.x]
 
-    steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - run: npm install 
-    - run: npm run pretest
+#     steps:
+#     - uses: actions/checkout@v2
+#     - name: Use Node.js ${{ matrix.node-version }}
+#       uses: actions/setup-node@v1
+#       with:
+#         node-version: ${{ matrix.node-version }}
+#     - run: npm install 
+#     - run: npm run pretest
 
-  Test:
-    runs-on: ubuntu-latest
+#   Test:
+#     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [12.x]
+#     strategy:
+#       matrix:
+#         node-version: [12.x]
 
-    steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - run: npm install 
-    - run: node . -t
+#     steps:
+#     - uses: actions/checkout@v2
+#     - name: Use Node.js ${{ matrix.node-version }}
+#       uses: actions/setup-node@v1
+#       with:
+#         node-version: ${{ matrix.node-version }}
+#     - run: npm install 
+#     - run: node . -t
